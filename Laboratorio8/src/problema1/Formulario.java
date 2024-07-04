@@ -115,22 +115,22 @@ public class Formulario extends JFrame {
 
         JButton btnGuardar = new JButton("Guardar Datos");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnGuardar.setBounds(460, 163, 184, 34);
+        btnGuardar.setBounds(364, 458, 184, 34);
         contentPane.add(btnGuardar);
 
         JButton btnBuscarCedula = new JButton("Buscar por Cédula");
         btnBuscarCedula.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnBuscarCedula.setBounds(460, 220, 184, 34);
+        btnBuscarCedula.setBounds(364, 160, 184, 34);
         contentPane.add(btnBuscarCedula);
 
         JButton btnBuscarCarreraSexo = new JButton("Buscar por Carrera y Sexo");
         btnBuscarCarreraSexo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnBuscarCarreraSexo.setBounds(460, 277, 260, 34);
+        btnBuscarCarreraSexo.setBounds(321, 341, 260, 34);
         contentPane.add(btnBuscarCarreraSexo);
 
         JButton btnReportes = new JButton("Mostrar Reportes");
         btnReportes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnReportes.setBounds(700, 361, 184, 34);
+        btnReportes.setBounds(697, 458, 184, 34);
         contentPane.add(btnReportes);
 
         btnGuardar.addActionListener(new ActionListener() {
