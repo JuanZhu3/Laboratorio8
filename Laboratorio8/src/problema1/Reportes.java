@@ -70,12 +70,12 @@ public class Reportes extends JFrame {
     }
 
     private void volverAlFormulario() {
-        this.dispose(); // Cierra la ventana actual (Reportes)
+        this.dispose();
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
                     Formulario frame = new Formulario();
-                    frame.setVisible(true); // Abre una nueva instancia de Formulario
+                    frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

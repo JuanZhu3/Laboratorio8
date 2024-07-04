@@ -1,5 +1,7 @@
 package problema1;
 
+//Integrantes: Juan Zhu, Jeremy Martinez; Rafael Gomez, Alex De Boutaud
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
