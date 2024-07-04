@@ -26,8 +26,8 @@ public class Formulario extends JFrame {
     private JTextField textCedula;
     private JComboBox<String> comboBoxCarreras;
     private JComboBox<String> comboBoxSexo;
-    private ArrayList<Estudiantes> estudiantes;
-    private Becas becas;
+    private static ArrayList<Estudiantes> estudiantes = new ArrayList<>();
+    private static Becas becas = new Becas();
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -43,9 +43,6 @@ public class Formulario extends JFrame {
     }
 
     public Formulario() {
-        estudiantes = new ArrayList<>();
-        becas = new Becas();
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 932, 552);
         contentPane = new JPanel();
@@ -117,22 +114,22 @@ public class Formulario extends JFrame {
 
         JButton btnGuardar = new JButton("Guardar Datos");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnGuardar.setBounds(364, 458, 184, 34);
+        btnGuardar.setBounds(341, 457, 184, 34);
         contentPane.add(btnGuardar);
 
         JButton btnBuscarCedula = new JButton("Buscar por Cédula");
         btnBuscarCedula.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnBuscarCedula.setBounds(364, 160, 184, 34);
+        btnBuscarCedula.setBounds(341, 160, 184, 34);
         contentPane.add(btnBuscarCedula);
 
         JButton btnBuscarCarreraSexo = new JButton("Buscar por Carrera y Sexo");
         btnBuscarCarreraSexo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnBuscarCarreraSexo.setBounds(321, 341, 260, 34);
+        btnBuscarCarreraSexo.setBounds(310, 343, 260, 34);
         contentPane.add(btnBuscarCarreraSexo);
 
         JButton btnReportes = new JButton("Mostrar Reportes");
         btnReportes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnReportes.setBounds(697, 458, 184, 34);
+        btnReportes.setBounds(707, 457, 184, 34);
         contentPane.add(btnReportes);
 
         btnGuardar.addActionListener(new ActionListener() {
@@ -235,9 +232,8 @@ public class Formulario extends JFrame {
         if (!encontrados.isEmpty()) {
             mostrarReporteBusqueda(encontrados);
         } else {
-            JOptionPane.showMessageDialog(this,
-                    "No se encontraron estudiantes con la carrera y sexo seleccionados.", "Información",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No se encontraron estudiantes con la carrera y sexo seleccionados.",
+                    "Información", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -261,7 +257,8 @@ public class Formulario extends JFrame {
             sb.append("Cédula: ").append(estudiante.getCedula()).append("\n");
             sb.append("Carrera: ").append(estudiante.getCarrera()).append("\n");
             sb.append("Índice: ").append(estudiante.getIndiceAcademico()).append("\n");
-            sb.append("Sexo: ").append(estudiante.getSexo()).append("\n\n");
+            sb.append("Sexo: ").append(estudiante.getSexo()).append("\n");
+            sb.append("Beca: ").append(estudiante.getIndiceAcademico() >= 2 ? "Sí" : "No").append("\n\n");
         }
 
         JOptionPane.showMessageDialog(this, sb.toString(), "Estudiantes Encontrados",
